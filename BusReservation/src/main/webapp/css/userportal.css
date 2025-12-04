@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #ff4d4d;
+    padding: 16px 25px;
+    color: white;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    width: 94%;
+    margin: 20px auto;
+}
+
+/* BUS SELECTION FORM */
+.bus-select-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.bus-select-form select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.btn-submit {
+    padding: 10px 18px;
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #005fcc;
+}
+
+/* BUS LAYOUT */
+.bus-layout {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* DECK BOX */
+.deck-box {
+    background: #fff;
+    padding: 18px;
+    border-radius: 14px;
+    width: 330px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.deck-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #222;
+}
+
+/* ROWS */
+.deck-row .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+/* SEAT DESIGN */
+.seat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.seat {
+    width: 50px;
+    height: 90px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.available {
+    background: #d4ffe4;
+    border: 2px solid #00b870;
+}
+
+.available:hover {
+    background: #b7ffd5;
+    transform: scale(1.05);
+}
+
+.selected {
+    border: 2px solid #0077ff;
+    box-shadow: 0 0 10px rgba(0,120,255,0.6);
+}
+
+.booked {
+    background: #d3d3d3;
+    border: 2px solid #888;
+    color: #555;
+}
+
+/* PRICE */
+.seat-price {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.sold {
+    color: #b30000;
+    font-weight: bold;
+}
+
+/* LABEL INSIDE SEAT */
+.seat-label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* BOOKING FORM */
+.booking-form {
+    background: #fff;
+    padding: 25px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff4d4d;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ff1f1f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .deck-box {
+        width: 100%;
+    }
+    .seat {
+        width: 40px;
+        height: 70px;
+        font-size: 14px;
+    }
+    .bus-select-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn-submit {
+        width: 100%;
+    }
+}

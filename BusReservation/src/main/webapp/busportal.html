@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Registration</title>
+
+    <link rel="stylesheet" href="css/busportal.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register Bus</h2>
+
+        <form action="busportal" method="post">
+
+            <label>Vehicle Number</label>
+            <input type="text" name="veh_number" placeholder="TN 07 AB 1234" required>
+
+            <label>Bus Name</label>
+            <input type="text" name="name" placeholder="Example Travels" required>
+
+            <label>Contact Number</label>
+            <input type="text" name="contact" placeholder="9876543210" required>
+
+            <label>Destination</label>
+            <input type="text" name="destination" placeholder="Chennai → Bangalore" required>
+
+            <label>Total Seat Capacity</label>
+            <input type="text" name="capacity" placeholder="40" required>
+
+            <label>Ticket Price (₹)</label>
+            <input type="number" step="0.01" name="price" placeholder="350.00" required>
+
+            <button type="submit">Save Bus</button>
+        </form>
+    </div>
+
+<script>
+        const url = new URL(window.location.href);
+        if (url.searchParams.get("success") === "true") {
+            alert("Bus details saved successfully!");
+            window.location.href = "adminportal.html";
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card{
+    height: 100vh;
+    width: 100vw;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card2 {
+    height: 60%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    border-radius: 12px;
+}
+
+
+.head{
+    height: 150px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box>img{
+    height: 100px;
+}
+
+.form{
+    height: calc(100% - 230px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form input{
+    display: block;
+    height: 50px;
+    width: 300px;
+    background: none;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+.input-error::placeholder {
+    color: red;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form>button{
+    height: 30px;
+    width: 70px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: antiquewhite;
+    transition: all 0.1s ease-in;
+}
+
+form>button:hover{
+    background-color: rgb(233, 219, 200);
+    transform: scale(1.03);
+    box-shadow: 1px 1px 3px black;
+}
+
+input::placeholder{
+    text-transform: capitalize;
+}

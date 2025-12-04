@@ -1,0 +1,107 @@
+OLD JSP OF USERPORTAL
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Seat Booking</title>
+
+    <!-- NEW MODERN CSS -->
+    <link rel="stylesheet" href="css/userportal.css?v=<%=System.currentTimeMillis()%>">
+
+    <script>
+        // 3D seat selection script
+        function chooseSeat(el, num) {
+            document.querySelectorAll(".seat").forEach(s => s.classList.remove("selected"));
+            el.classList.add("selected");
+            document.getElementById("seatno").value = num;
+        }
+    </script>
+</head>
+
+<body>
+
+<%
+    List<String> list = (List<String>) request.getAttribute("buslist");
+    List<Boolean> seatList = (List<Boolean>) request.getAttribute("seatList");
+    String bus = (String) request.getAttribute("bus");
+    Double price = (Double) request.getAttribute("price");
+%>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-left">🚌 BusBooking</div>
+
+    <div class="nav-right">
+        <button class="nav-btn" onclick="window.location.href='login.html'">Login</button>
+        <button class="nav-btn outline" onclick="window.location.href='register.html'">Sign Up</button>
+    </div>
+</nav>
+
+
+<div class="wrapper">
+
+    <!-- SELECT BUS -->
+    <div class="card glass">
+        <h2>Select Bus</h2>
+
+        <form action="viewseat" method="get">
+
+            <select name="bus" class="input">
+                <% if(list != null) { for(String s : list) { %>
+                    <option value="<%=s%>"><%=s%></option>
+                <% }} %>
+            </select>
+
+            <button type="submit" class="btn primary">View Seats</button>
+        </form>
+    </div>
+
+
+    <!-- PASSENGER DETAILS + SEAT LAYOUT -->
+    <div class="card glass">
+        <h2>Passenger Details</h2>
+
+        <form action="userportal" method="post">
+
+            <input type="text" class="input" name="bus" value="<%= bus %>" readonly>
+            <input type="text" class="input" name="price" value="₹<%= price %>" readonly>
+            <input type="text" class="input" name="name" placeholder="Full Name" required>
+            <input type="tel" class="input" name="contact" placeholder="Contact Number" required>
+
+            <input type="text" id="seatno" name="seatno" class="input" placeholder="Select a seat" readonly required>
+
+            <!-- 3D BUS SEAT GRID -->
+            <div class="seat-grid">
+
+                <%
+                    if (seatList != null) {
+                        int count = 0;
+                        for(Boolean b : seatList) {
+                            count++;
+                %>
+
+                <% if(b) { %>
+                    <div class="seat available"
+                         data-seat="<%=count%>"
+                         onclick="chooseSeat(this, <%=count%>)">
+                         <%=count%>
+                    </div>
+                <% } else { %>
+                    <div class="seat booked" data-seat="<%=count%>"><%=count%></div>
+                <% }}} %>
+
+            </div>
+
+            <button type="submit" class="btn primary full">Book Now</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

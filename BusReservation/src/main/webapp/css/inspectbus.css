@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/* ===== Body ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #eaeff5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* ===== Page Title ===== */
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 30px 0;
+    color: #1e2a38;
+    letter-spacing: 1px;
+}
+
+/* ===== Card Container ===== */
+.card {
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== Form ===== */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+label {
+    flex: 1 0 100%;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+select {
+    flex: 1 0 60%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #3498db;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #217dbb;
+    transform: translateY(-2px);
+}
+
+/* ===== Go Back Button ===== */
+button[type="button"] {
+    background: #95a5a6;
+}
+
+button[type="button"]:hover {
+    background: #7f8c8d;
+}
+
+/* ===== Bus Details ===== */
+h2 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #1e2a38;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* ===== Seat Grid ===== */
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.seat {
+    padding: 15px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    cursor: default;
+    transition: all 0.2s ease;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.available {
+    background: #2ecc71;
+}
+
+.booked {
+    background: #e74c3c;
+}
+
+.seat:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .seat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    select {
+        flex: 1 0 100%;
+    }
+
+    button {
+        flex: 1 0 45%;
+    }
+}

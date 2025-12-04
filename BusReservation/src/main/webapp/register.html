@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<link rel="stylesheet" href="css/form.css">
+<body>
+    
+    <div class="card">
+        
+        <div class="card2">
+            <div class="head">
+                <div class="box">
+                    <h1>REGISTER</h1>
+                    <img src="./images/user.png" alt="loading">
+                </div>
+            </div>
+
+            <div class="form">
+                <form action="register" method="post">
+                    <input type="email" name="email" id="email" placeholder="Enter the email">
+                    <input type="password" name="password" id="password" placeholder="Enter the password">
+
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+    	const params = new URLSearchParams(window.location.search);
+    	const error = params.get("error");
+
+    	if (error) {
+        	const emailInput = document.getElementById("email");
+        	emailInput.placeholder = error;
+        	emailInput.classList.add("input-error");
+    	}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<link rel="stylesheet" href="css/form.css">
+<body>
+    
+    <div class="card">
+        
+        <div class="card2">
+            <div class="head">
+                <div class="box">
+                    <h1>LOGIN</h1>
+                    <img src="./images/user.png" alt="loading">
+                </div>
+            </div>
+
+            <div class="form">
+                <form action="login" method="get">
+                    <input type="email" name="email" id="email" placeholder="Enter the email">
+                    <input type="password" name="password" id="password" placeholder="Enter the password">
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="register.html">Register</a></p>
+                <p>I am admin <a href="admin.html">Admin</a></p>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const emailerror = params.get("emailerror");
+    const passworderror = params.get("passworderror");
+
+    if (emailerror) {
+        const emailInput = document.getElementById("email");
+        emailInput.placeholder = emailerror;
+        emailInput.classList.add("input-error");
+        emailInput.value = "";
+    }
+
+    if (passworderror) {
+        const passInput = document.getElementById("password");
+        passInput.placeholder = passworderror;
+        passInput.classList.add("input-error");
+        passInput.value = "";
+    }
+</script>
+
+
+</body>
+</html>
