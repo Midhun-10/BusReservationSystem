@@ -77,3 +77,13 @@ http://localhost:8080/BusReservationSystem/
 <h3>🎯 <span style="color:#ff7b00;">Purpose</span></h3>
 
 Ideal for learning Servlets + JSP, Hibernate, and full-stack Java basics.
+
+---
+
+<p align="center">
+  <a href="https://github.com/Midhun-10/BusReservationSystem/" 
+     style="background:#ff7b00; color:white; padding:10px 18px; border-radius:6px; text-decoration:none;">
+     🔗 Go to Project
+  </a>
+</p>
+
